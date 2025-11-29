@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>С Днем Рождения, родной!</title>
+
+<!-- Stranger Things Font -->
+<link href="https://fonts.cdnfonts.com/css/itc-benguiat" rel="stylesheet">
+
+<style>
+body {
+margin: 0;
+padding: 0;
+overflow: hidden;
+font-family: 'ITC Benguiat', serif;
+background: linear-gradient(135deg, #000000, #0b0d31, #570000);
+background-size: 300% 300%;
+animation: gradientMove 12s ease infinite;
+}
+
+/* Движение градиента */
+@keyframes gradientMove {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+
+/* Гранжовые фигуры */
+.shape {
+position: absolute;
+width: 400px;
+height: 400px;
+background: radial-gradient(circle, rgba(255,0,0,0.25) 0%, rgba(0,0,0,0) 70%);
+filter: blur(40px);
+animation: float 10s infinite ease-in-out alternate;
+}
+
+.shape:nth-child(1) { top: 10%; left: 10%; }
+.shape:nth-child(2) { top: 50%; left: 60%; animation-duration: 14s; }
+.shape:nth-child(3) { top: 70%; left: 20%; animation-duration: 12s; }
+
+@keyframes float {
+from { transform: translateY(0) scale(1); }
+to { transform: translateY(-80px) scale(1.2); }
+}
+
+/* Title */
+.title {
+position: absolute;
+top: 20%;
+width: 100%;
+text-align: center;
+font-size: 80px;
+color: #ff0000;
+letter-spacing: 6px;
+text-shadow: 0 0 10px red, 0 0 20px #ff0030, 0 0 40px #ff0030;
+animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {opacity: 1;}
+20%, 24%, 55% {opacity: 0.3;}
+}
+
+/* Message */
+.message {
+position: absolute;
+top: 60%;
+width: 70%;
+left: 15%;
+text-align: center;
+font-size: 26px;
+color: white;
+line-height: 1.6;
+animation: fadeIn 4s ease-in-out;
+}
+
+@keyframes fadeIn {
+from {opacity: 0;}
+to {opacity: 1;}
+}
+
+/* Button Confetti */
+button {
+position: absolute;
+bottom: 40px;
+left: 50%;
+transform: translateX(-50%);
+padding: 12px 28px;
+font-size: 20px;
+border: 2px solid red;
+background: transparent;
+color: red;
+letter-spacing: 2px;
+cursor: pointer;
+transition: 0.3s;
+}
+
+button:hover {
+background: red;
+color: black;
+box-shadow: 0 0 20px red;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Dynamic grunge shapes -->
+<div class="shape"></div>
+<div class="shape"></div>
+<div class="shape"></div>
+
+<div class="title">С ДНЁМ РОЖДЕНИЯ, РОДНОЙ!</div>
+
+<div class="message">
+Сегодня мир стал ярче, потому что появился человек, который умеет вдохновлять,
+поддерживать и наполнять жизнь энергией. Спасибо за дружбу,
+за настоящие моменты и за то, что ты остаёшься собой.
+<br><br>
+Желаю смелости, настоящих побед, людей, которые рядом по-настоящему.
+<br><br>
+Ты невероятно важен. И я искренне горжусь тем, что знаю тебя.
+</div>
+
+<button onclick="startConfetti()">НАЖМИ ДЛЯ МАГИИ 🎉</button>
+
+<!-- Confetti script -->
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<script>
+const jsConfetti = new JSConfetti()
+
+function startConfetti() {
+jsConfetti.addConfetti({
+emojis: ['🎉', '✨', '🔥', '❤️'],
+emojiSize: 40,
+confettiNumber: 50,
+})
+}
+</script>
+
+</body>
+</html>
