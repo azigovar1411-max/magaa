@@ -159,6 +159,20 @@ confettiNumber: 60,
 })
 }
 </script>
+  <!-- Music -->
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener('click', () => {
+  const music = document.getElementById("bg-music");
+  if (music.paused) {
+    music.volume = 0.5; // громкость
+    music.play();
+  }
+});
+</script>
 
 </body>
 </html>
