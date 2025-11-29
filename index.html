@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>С Днем Рождения, родной!</title>
+<title>С Днём Рождения, Чупакабрик!</title>
 
 <!-- Stranger Things Font -->
 <link href="https://fonts.cdnfonts.com/css/itc-benguiat" rel="stylesheet">
@@ -12,129 +12,150 @@ body {
 margin: 0;
 padding: 0;
 overflow: hidden;
-font-family: 'ITC Benguiat', serif;
-background: linear-gradient(135deg, #000000, #0b0d31, #570000);
+font-family: "ITC Benguiat", serif;
+background: linear-gradient(135deg, #000000, #0a0420, #3b0000);
 background-size: 300% 300%;
-animation: gradientMove 12s ease infinite;
+animation: gradientMove 10s ease infinite;
 }
 
-/* Движение градиента */
+/* Background animation */
 @keyframes gradientMove {
 0% { background-position: 0% 50%; }
 50% { background-position: 100% 50%; }
 100% { background-position: 0% 50%; }
 }
 
-/* Гранжовые фигуры */
-.shape {
+/* Floating grunge lights */
+.light {
 position: absolute;
-width: 400px;
-height: 400px;
-background: radial-gradient(circle, rgba(255,0,0,0.25) 0%, rgba(0,0,0,0) 70%);
-filter: blur(40px);
-animation: float 10s infinite ease-in-out alternate;
+width: 350px;
+height: 350px;
+background: radial-gradient(circle, rgba(255,20,20,0.25) 0%, rgba(0,0,0,0) 70%);
+filter: blur(35px);
+animation: float 8s infinite alternate ease-in-out;
 }
-
-.shape:nth-child(1) { top: 10%; left: 10%; }
-.shape:nth-child(2) { top: 50%; left: 60%; animation-duration: 14s; }
-.shape:nth-child(3) { top: 70%; left: 20%; animation-duration: 12s; }
+.light:nth-child(1) { top: 15%; left: 15%; }
+.light:nth-child(2) { top: 65%; left: 70%; animation-duration: 11s; }
+.light:nth-child(3) { top: 75%; left: 10%; animation-duration: 9s; }
 
 @keyframes float {
 from { transform: translateY(0) scale(1); }
-to { transform: translateY(-80px) scale(1.2); }
+to { transform: translateY(-70px) scale(1.25); }
 }
 
 /* Title */
 .title {
 position: absolute;
-top: 20%;
+top: 18%;
 width: 100%;
 text-align: center;
-font-size: 80px;
+font-size: 78px;
 color: #ff0000;
 letter-spacing: 6px;
-text-shadow: 0 0 10px red, 0 0 20px #ff0030, 0 0 40px #ff0030;
-animation: flicker 2s infinite;
+text-shadow: 0 0 10px red, 0 0 30px #ff0030, 0 0 50px #ff0030;
+animation: flicker 2.4s infinite;
 }
-
 @keyframes flicker {
-0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {opacity: 1;}
-20%, 24%, 55% {opacity: 0.3;}
+0%,18%,22%,25%,53%,57%,100% {opacity:1;}
+19%,23%,54% {opacity:0.3;}
 }
 
-/* Message */
+/* Main message */
 .message {
 position: absolute;
-top: 60%;
+top: 62%;
 width: 70%;
 left: 15%;
 text-align: center;
-font-size: 26px;
+font-size: 23px;
 color: white;
+opacity: 0.9;
 line-height: 1.6;
-animation: fadeIn 4s ease-in-out;
+animation: fade 4s ease-in-out;
 }
+@keyframes fade { from{opacity:0;} to{opacity:1;} }
 
-@keyframes fadeIn {
-from {opacity: 0;}
-to {opacity: 1;}
-}
-
-/* Button Confetti */
-button {
+/* Card button */
+.card-btn {
 position: absolute;
 bottom: 40px;
 left: 50%;
 transform: translateX(-50%);
-padding: 12px 28px;
-font-size: 20px;
-border: 2px solid red;
 background: transparent;
-color: red;
-letter-spacing: 2px;
+border: none;
+font-size: 60px;
 cursor: pointer;
-transition: 0.3s;
+animation: pulse 2s infinite;
+}
+@keyframes pulse {
+0% { transform: translateX(-50%) scale(1); }
+50% { transform: translateX(-50%) scale(1.2); }
+100% { transform: translateX(-50%) scale(1); }
 }
 
-button:hover {
-background: red;
-color: black;
-box-shadow: 0 0 20px red;
+/* Hidden card */
+.card {
+position: absolute;
+top: 30%;
+left: 50%;
+transform: translate(-50%, -50%) scale(0);
+width: 420px;
+height: 260px;
+background: rgba(0,0,0,0.8);
+border: 2px solid red;
+border-radius: 12px;
+padding: 25px;
+text-align: center;
+color: white;
+font-size: 22px;
+letter-spacing: 1px;
+line-height: 1.4;
+box-shadow: 0 0 25px red;
+transition: 0.7s ease;
+opacity: 0;
+}
+.card.open {
+transform: translate(-50%, -50%) scale(1);
+opacity: 1;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Dynamic grunge shapes -->
-<div class="shape"></div>
-<div class="shape"></div>
-<div class="shape"></div>
+<div class="light"></div>
+<div class="light"></div>
+<div class="light"></div>
 
-<div class="title">С ДНЁМ РОЖДЕНИЯ, РОДНОЙ!</div>
+<div class="title">С ДНЁМ РОЖДЕНИЯ, ЧУПАКАБРИК!</div>
 
 <div class="message">
-Сегодня мир стал ярче, потому что появился человек, который умеет вдохновлять,
-поддерживать и наполнять жизнь энергией. Спасибо за дружбу,
-за настоящие моменты и за то, что ты остаёшься собой.
+Сегодня мир стал лучше, потому что в нём есть ты.
+Спасибо за настоящую дружбу, за силу, за свет — за всё.
 <br><br>
-Желаю смелости, настоящих побед, людей, которые рядом по-настоящему.
-<br><br>
-Ты невероятно важен. И я искренне горжусь тем, что знаю тебя.
+Ты правда редкий человек.
 </div>
 
-<button onclick="startConfetti()">НАЖМИ ДЛЯ МАГИИ 🎉</button>
+<!-- Button postcard -->
+<button class="card-btn" onclick="openCard()">📩</button>
 
-<!-- Confetti script -->
+<!-- Hidden message card -->
+<div id="card" class="card">
+Ты — человек, которому можно доверять без сомнений.
+Спасибо за то, что ты рядом. Я искренне дорожу тобой.
+</div>
+
+<!-- Confetti -->
 <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 <script>
 const jsConfetti = new JSConfetti()
 
-function startConfetti() {
+function openCard() {
+document.getElementById("card").classList.add("open");
 jsConfetti.addConfetti({
-emojis: ['🎉', '✨', '🔥', '❤️'],
+emojis: ['🎉','🔥','❤️','✨'],
 emojiSize: 40,
-confettiNumber: 50,
+confettiNumber: 60,
 })
 }
 </script>
